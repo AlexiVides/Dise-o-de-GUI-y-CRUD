@@ -70,3 +70,5 @@ C:\Users\alexi\Documents\GitHub\Dise-o-de-GUI-y-CRUD\ProyectoTienda\ProyectoTien
 C:\Users\alexi\Documents\GitHub\Dise-o-de-GUI-y-CRUD\ProyectoTienda\ProyectoTienda\obj\Debug\net6.0-windows\ref\ProyectoTienda.dll
 C:\Users\alexi\Documents\GitHub\Dise-o-de-GUI-y-CRUD\ProyectoTienda\ProyectoTienda\obj\Debug\net6.0-windows\ProyectoTienda.pdb
 C:\Users\alexi\Documents\GitHub\Dise-o-de-GUI-y-CRUD\ProyectoTienda\ProyectoTienda\obj\Debug\net6.0-windows\ProyectoTienda.genruntimeconfig.cache
+C:\Users\alexi\Documents\GitHub\Dise-o-de-GUI-y-CRUD\ProyectoTienda\ProyectoTienda\obj\Debug\net6.0-windows\ProyectoTienda.MenuStrip.resources
+C:\Users\alexi\Documents\GitHub\Dise-o-de-GUI-y-CRUD\ProyectoTienda\ProyectoTienda\obj\Debug\net6.0-windows\ProyectoTienda.FormDesactivos.resources

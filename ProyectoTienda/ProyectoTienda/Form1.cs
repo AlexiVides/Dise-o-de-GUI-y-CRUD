@@ -18,7 +18,7 @@ namespace ProyectoTienda
             txtdui.Text = "";
             txtdireccion.Text = "";
             txttelefono.Text = "";
-            txtestado.Text = "";
+    
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace ProyectoTienda
             Conexion.Conectar();
             try
             {
-                MessageBox.Show("La ha conectado correctamente");
+                
             }
             catch
             {
@@ -70,6 +70,8 @@ namespace ProyectoTienda
 
         private void dGvMostrar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
             //Aca establecemos la posiciones que a la hora de dar click a datagrid se nos muestre en los campos de texto y
             //se llenen atraves de las posiones y datos que traer
             try
@@ -81,7 +83,6 @@ namespace ProyectoTienda
                 txtdui.Text = dGvMostrar.CurrentRow.Cells[3].Value.ToString();
                 txtdireccion.Text = dGvMostrar.CurrentRow.Cells[4].Value.ToString();
                 txttelefono.Text = dGvMostrar.CurrentRow.Cells[5].Value.ToString();
-                txtestado.Text = dGvMostrar.CurrentRow.Cells[6].Value.ToString();
                 
 
 
@@ -91,6 +92,8 @@ namespace ProyectoTienda
                 //Si se encuentra un error nos lo mostrara
                 MessageBox.Show("Error");
             }
+
+
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -109,7 +112,7 @@ namespace ProyectoTienda
                 sqlCommand.Parameters.AddWithValue("@dui", txtdui.Text);
                 sqlCommand.Parameters.AddWithValue("@direccion", txtdireccion.Text);
                 sqlCommand.Parameters.AddWithValue("@telefono", txttelefono.Text);
-                sqlCommand.Parameters.AddWithValue("@estado", txtestado.Text.ToLower());
+                sqlCommand.Parameters.AddWithValue("@estado", "activo");
 
 
                 ClearInformacion();
@@ -145,7 +148,7 @@ namespace ProyectoTienda
                 comando.Parameters.AddWithValue("@dui", txtdui.Text);
                 comando.Parameters.AddWithValue("@direccion", txtdireccion.Text);
                 comando.Parameters.AddWithValue("@telefono", txttelefono.Text);
-                comando.Parameters.AddWithValue("@estado", txtestado.Text.ToLower());
+                comando.Parameters.AddWithValue("@estado", "activo");
                 comando.ExecuteNonQuery();
                 ClearInformacion();
                 MessageBox.Show("Se ha registrado correctamente");
