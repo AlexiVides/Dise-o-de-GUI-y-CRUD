@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ns_al\\Documentos\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj": {}
+    "C:\\Users\\alexi\\Documents\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ns_al\\Documentos\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj": {
+    "C:\\Users\\alexi\\Documents\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ns_al\\Documentos\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj",
+        "projectUniqueName": "C:\\Users\\alexi\\Documents\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj",
         "projectName": "ProyectoTienda",
-        "projectPath": "C:\\Users\\ns_al\\Documentos\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj",
-        "packagesPath": "C:\\Users\\ns_al\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ns_al\\Documentos\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\obj\\",
+        "projectPath": "C:\\Users\\alexi\\Documents\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\ProyectoTienda.csproj",
+        "packagesPath": "C:\\Users\\alexi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexi\\Documents\\GitHub\\Dise-o-de-GUI-y-CRUD\\ProyectoTienda\\ProyectoTienda\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ns_al\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alexi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

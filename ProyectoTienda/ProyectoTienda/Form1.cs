@@ -109,7 +109,7 @@ namespace ProyectoTienda
                 sqlCommand.Parameters.AddWithValue("@dui", txtdui.Text);
                 sqlCommand.Parameters.AddWithValue("@direccion", txtdireccion.Text);
                 sqlCommand.Parameters.AddWithValue("@telefono", txttelefono.Text);
-                sqlCommand.Parameters.AddWithValue("@estado", txtestado.Text);
+                sqlCommand.Parameters.AddWithValue("@estado", txtestado.Text.ToLower());
 
 
                 ClearInformacion();
@@ -145,10 +145,10 @@ namespace ProyectoTienda
                 comando.Parameters.AddWithValue("@dui", txtdui.Text);
                 comando.Parameters.AddWithValue("@direccion", txtdireccion.Text);
                 comando.Parameters.AddWithValue("@telefono", txttelefono.Text);
-                comando.Parameters.AddWithValue("@estado", txtestado.Text);
+                comando.Parameters.AddWithValue("@estado", txtestado.Text.ToLower());
                 comando.ExecuteNonQuery();
                 ClearInformacion();
-                MessageBox.Show("Se ha registro correctamente");
+                MessageBox.Show("Se ha registrado correctamente");
                 dGvMostrar.DataSource = MostrarDato();
             }
             catch
@@ -168,7 +168,35 @@ namespace ProyectoTienda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //aca eliminamos un registro en el dataGrip en la base de datos siempre estará
+            //lo que hacemos es actualizar el registro y solo cambiarle el estado a desactivado
+
+            try
+            {
+                Conexion.Conectar();
+                string delete = "UPDATE Cliente SET codigo=@codigo, estado=@estado  WHERE codigo=@codigo";
+                SqlCommand sqlCommand = new SqlCommand(delete, Conexion.Conectar());
+
+
+                sqlCommand.Parameters.AddWithValue("@codigo", txtcodigo.Text);
+
+                sqlCommand.Parameters.AddWithValue("@estado", "desactivo");
+
+
+                ClearInformacion();
+                sqlCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Se ha eliminado correctamente");
+
+                dGvMostrar.DataSource = MostrarDato();
+            }
+            catch
+            {
+                // Si se encuentra un error nos lo mostrara
+                MessageBox.Show("Error");
+            }
+
+
         }
     }
 }
