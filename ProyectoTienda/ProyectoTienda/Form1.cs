@@ -201,5 +201,16 @@ namespace ProyectoTienda
 
 
         }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult opc;
+            opc = MessageBox.Show("Desea salir? ", "Salir del formulario", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (opc == DialogResult.OK)
+            {
+                Dispose();
+            }
+
+        }
     }
 }
