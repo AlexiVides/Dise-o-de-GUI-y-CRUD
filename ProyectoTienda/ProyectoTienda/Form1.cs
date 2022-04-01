@@ -32,7 +32,7 @@ namespace ProyectoTienda
             }
             catch
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
             dGvMostrar.DataSource = MostrarDato();
@@ -57,7 +57,7 @@ namespace ProyectoTienda
             catch
             {
                 //Si se encuentra un error nos lo mostrara
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
             return null;
@@ -90,7 +90,7 @@ namespace ProyectoTienda
             catch
             {
                 //Si se encuentra un error nos lo mostrara
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
 
@@ -126,7 +126,7 @@ namespace ProyectoTienda
             catch
             {
                 // Si se encuentra un error nos lo mostrara
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
 
@@ -137,8 +137,7 @@ namespace ProyectoTienda
         private void btnsave_Click(object sender, EventArgs e)
         {
             //realimaos un insert a la bd a traves de parametros donde posisionamos y asiganmos los valores que resiven las cajas de texto
-            try
-            {
+           
                 Conexion.Conectar();
                 string insertar = "INSERT INTO Cliente VALUES (@nombreCliente,@apellidoCliente,@codigo,@dui,@direccion,@telefono,@estado)";
                 SqlCommand comando = new SqlCommand(insertar, Conexion.Conectar());
@@ -149,6 +148,8 @@ namespace ProyectoTienda
                 comando.Parameters.AddWithValue("@direccion", txtdireccion.Text);
                 comando.Parameters.AddWithValue("@telefono", txttelefono.Text);
                 comando.Parameters.AddWithValue("@estado", "activo");
+            try
+            {
                 comando.ExecuteNonQuery();
                 ClearInformacion();
                 MessageBox.Show("Se ha registrado correctamente");
@@ -157,7 +158,7 @@ namespace ProyectoTienda
             catch
             {
                 // Si se encuentra un error nos lo mostrara
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             
 
@@ -176,27 +177,36 @@ namespace ProyectoTienda
 
             try
             {
-                Conexion.Conectar();
-                string delete = "UPDATE Cliente SET codigo=@codigo, estado=@estado  WHERE codigo=@codigo";
-                SqlCommand sqlCommand = new SqlCommand(delete, Conexion.Conectar());
+                DialogResult opc;
+                opc = MessageBox.Show("Esta seguro de Desactivar el registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (opc == DialogResult.Yes)
+                {
+
+                    Conexion.Conectar();
+                    string delete = "UPDATE Cliente SET codigo=@codigo, estado=@estado  WHERE codigo=@codigo";
+                    SqlCommand sqlCommand = new SqlCommand(delete, Conexion.Conectar());
 
 
-                sqlCommand.Parameters.AddWithValue("@codigo", txtcodigo.Text);
+                    sqlCommand.Parameters.AddWithValue("@codigo", txtcodigo.Text);
 
-                sqlCommand.Parameters.AddWithValue("@estado", "desactivo");
+                    sqlCommand.Parameters.AddWithValue("@estado", "desactivo");
 
 
-                ClearInformacion();
-                sqlCommand.ExecuteNonQuery();
+                    ClearInformacion();
+                    sqlCommand.ExecuteNonQuery();
 
-                MessageBox.Show("Se ha eliminado correctamente");
+                    MessageBox.Show("Se ha Eliminado", "Eliminar");
 
-                dGvMostrar.DataSource = MostrarDato();
+                    dGvMostrar.DataSource = MostrarDato();
+
+                }
+                
             }
             catch
             {
                 // Si se encuentra un error nos lo mostrara
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
 

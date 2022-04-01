@@ -42,7 +42,7 @@
             this.registrosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,14 +58,14 @@
             // activosToolStripMenuItem
             // 
             this.activosToolStripMenuItem.Name = "activosToolStripMenuItem";
-            this.activosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.activosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.activosToolStripMenuItem.Text = "Activos";
             this.activosToolStripMenuItem.Click += new System.EventHandler(this.activosToolStripMenuItem_Click);
             // 
             // desactivosToolStripMenuItem
             // 
             this.desactivosToolStripMenuItem.Name = "desactivosToolStripMenuItem";
-            this.desactivosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desactivosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.desactivosToolStripMenuItem.Text = "Desactivos";
             this.desactivosToolStripMenuItem.Click += new System.EventHandler(this.desactivosToolStripMenuItem_Click);
             // 
@@ -73,8 +73,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoTienda.Properties.Resources.code_fondo;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(889, 515);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;

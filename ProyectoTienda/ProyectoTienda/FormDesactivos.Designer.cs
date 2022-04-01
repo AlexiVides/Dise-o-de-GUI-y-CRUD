@@ -149,6 +149,7 @@
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(594, 93);
+            this.txttelefono.MaxLength = 8;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(100, 23);
             this.txttelefono.TabIndex = 7;
@@ -177,6 +178,7 @@
             // txtdui
             // 
             this.txtdui.Location = new System.Drawing.Point(594, 25);
+            this.txtdui.MaxLength = 10;
             this.txtdui.Name = "txtdui";
             this.txtdui.Size = new System.Drawing.Size(100, 23);
             this.txtdui.TabIndex = 5;

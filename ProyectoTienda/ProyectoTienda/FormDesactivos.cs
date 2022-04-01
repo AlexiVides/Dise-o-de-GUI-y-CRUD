@@ -64,25 +64,34 @@ namespace ProyectoTienda
         {
             try
             {
-                Conexion.Conectar();
-                string delete = "UPDATE Cliente SET codigo=@codigo, estado=@estado  WHERE codigo=@codigo";
-                SqlCommand sqlCommand = new SqlCommand(delete, Conexion.Conectar());
+
+                DialogResult opc;
+                opc = MessageBox.Show("Esta seguro de Activar el registro?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                
+                if (opc == DialogResult.Yes)
+                {
+                    Conexion.Conectar();
+                    string delete = "UPDATE Cliente SET codigo=@codigo, estado=@estado  WHERE codigo=@codigo";
+                    SqlCommand sqlCommand = new SqlCommand(delete, Conexion.Conectar());
 
 
-                sqlCommand.Parameters.AddWithValue("@codigo", txtcodigo.Text);
+                    sqlCommand.Parameters.AddWithValue("@codigo", txtcodigo.Text);
 
-                sqlCommand.Parameters.AddWithValue("@estado", "activo");
+                    sqlCommand.Parameters.AddWithValue("@estado", "activo");
 
-                sqlCommand.ExecuteNonQuery();
+                    sqlCommand.ExecuteNonQuery();
 
-                MessageBox.Show("Se ha activado correctamente");
+                    MessageBox.Show("Se ha activado correctamente");
 
-                dGvMostrar.DataSource = MostrarDato();
+                    dGvMostrar.DataSource = MostrarDato();
+                }
+               
+                
             }
             catch
             {
                 // Si se encuentra un error nos lo mostrara
-                MessageBox.Show("Error");
+                MessageBox.Show("Se ha presentado un error!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -109,7 +118,7 @@ namespace ProyectoTienda
         private void Cerrar_Click(object sender, EventArgs e)
         {
             DialogResult opc;
-            opc = MessageBox.Show("Desea salir? ", "Salir del formulario", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            opc = MessageBox.Show("Desea salir? ", "Salir del formulario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (opc == DialogResult.OK)
             {
                 Dispose();

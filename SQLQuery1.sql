@@ -1,5 +1,20 @@
-use TiendaTec;
+create database TiendaTec
 
+use TiendaTec
+
+create table Cliente(
+id int primary key identity(1,1) not null,
+nombreCliente varchar (50) not null,
+apellidoCliente varchar (50) not null,
+codigo varchar(50) unique not null,
+dui varchar (10) unique not null,
+direccion varchar (100) not null,
+telefono varchar  (8) not null,
+estado varchar (9) not null
+);
+
+insert into Cliente values ('Marcos','Vides','MV2022','02124569-1','Ojos de Agua,calle el cipitio','75126523','activo')
+ select * from Cliente;
 select * from Cliente where estado = 'activo';
 select * from Cliente where estado = 'desactivo';
 delete Cliente where id = 6;
